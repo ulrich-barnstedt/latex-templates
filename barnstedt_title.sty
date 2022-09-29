@@ -1,0 +1,16 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{barnstedt_title}
+
+\RequirePackage{titlesec}
+\titleformat*{\section}{\large\bfseries}
+\titleformat*{\subsection}{\bfseries}
+\titleformat*{\subsubsection}{\bfseries}
+
+\renewcommand{\maketitle}{
+    \thispagestyle{plain}
+    \begin{center}
+        \Large\textbf{\@title}\\
+        \large{\@author}
+    \end{center}
+    \vspace{10pt}
+}

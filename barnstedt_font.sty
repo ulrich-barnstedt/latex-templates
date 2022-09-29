@@ -1,0 +1,20 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{barnstedt_font}
+
+\RequirePackage{fontspec}
+\RequirePackage{kvoptions}
+
+\SetupKeyvalOptions{
+    family=bfont,
+    prefix=bfont@,
+}
+\DeclareBoolOption{monospace}
+\ProcessKeyvalOptions*
+
+\ifbfont@monospace
+    \setmainfont{JetBrainsMono}
+    \setmonofont{JetBrainsMono}
+\else
+    \setmainfont{Roboto}
+    \setmonofont{JetBrainsMono}
+\fi
