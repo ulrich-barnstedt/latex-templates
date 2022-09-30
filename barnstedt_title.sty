@@ -1,22 +1,38 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{barnstedt_title}
 
+\RequirePackage{titlesec}
+\RequirePackage{xcolor}
+\RequirePackage{color}
 \RequirePackage{kvoptions}
 \SetupKeyvalOptions{
     family=btitle,
     prefix=btitle@,
 }
 \DeclareBoolOption{noFirstPage}
+\DeclareBoolOption{noColor}
+\DeclareBoolOption{wholePage}
 \ProcessKeyvalOptions*
 
-\RequirePackage{titlesec}
-\titleformat*{\section}{\large\bfseries}
-\titleformat*{\subsection}{\bfseries}
-\titleformat*{\subsubsection}{\bfseries}
+\definecolor{blue700}{HTML}{1565c0}
+\ifbtitle@noColor
+    \titleformat*{\section}{\large\bfseries}
+    \titleformat*{\subsection}{\bfseries}
+    \titleformat*{\subsubsection}{\bfseries}
+\else
+    \titleformat*{\section}{\color{blue700}\large\bfseries}
+    \titleformat*{\subsection}{\color{blue700}\bfseries}
+    \titleformat*{\subsubsection}{\color{blue700}\bfseries}
+\fi
 
 \renewcommand{\maketitle}{
     \ifbtitle@noFirstPage\else
         \thispagestyle{plain}
+    \fi
+
+    \ifbtitle@wholePage
+        \hspace{0pt}
+        \vfill
     \fi
 
     \begin{center}
@@ -24,4 +40,10 @@
         \large{\@author}
     \end{center}
     \vspace{10pt}
+
+    \ifbtitle@wholePage
+        \vfill
+        \hspace{0pt}
+        \clearpage
+    \fi
 }

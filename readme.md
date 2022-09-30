@@ -1,45 +1,46 @@
 # Latex-templates
 
-Format: `barnstedt_<name>.<.cls|.sty>`
+Custom modules and document classes, for easy usage betwewen documents.  
+Naming schema: `barnstedt_<module-name>.<sty|cls>`  
 
-### [`barnstedt_emargin4.sty`](./barnstedt_emargin4.sty)
+## Document classes
 
-Geometry modifications, A4 paper with extended margins
+> _`barnstedt_report.cls`_  
+> 
+> Custom documentclass styling, with a top bar (with the values of `\title` and `\author`), page numbers, and other formatting.  
+> Options:
+> - `line`: disable / enable top line
+> - `hl=value`: override header value (left) with something else
+> - `hr=value`: override header value (right) with something else
+> - ... +all options from documentclass `article`, e.g. `12pt`  
 
-### [`barnstedt_font.sty`](./barnstedt_font.sty)
+## Packages
 
-Font configuration for `Roboto`/`Jetbrains Mono`.  
-Supports a `[monospace]` option to turn all text monospaced:
-```latex
-\usepackage[monospace]{barnstedt_font}
-```
+> `barnstedt_emargin4.sty`
+> 
+> Modify geometry to be A4 paper with extended margins
 
-### [`barnstedt_imgconf.sty`](./barnstedt_imgconf.sty)
+> `barnstedt_font.sty`
+> 
+> Font configuration for `Roboto`/`Jetbrains Mono`.  
+> Options:
+> - `monospace`: use monospace for all text
 
-Image loading and label configuration.  
-Sets the default directory for images to `./images`, and takes an optional parameter `noItalic` if captions should 
-not be turned into italic text.
+> `barnstedt_imgconf.sty`
+> 
+> Image loading and label configuration.  
+> Options:
+> - `noItalic`: don't use italic font for captions
 
-### [`barnstedt_nodate.sty`](./barnstedt_nodate.sty)
+> `barnstedt_nodate.sty`
+> 
+> Remove date from `\maketitle` and other locations where it is present
 
-Removes date from `\maketitle` and other areas.
-
-### [`barnstedt_title.sty`](./barnstedt_title.sty)
-
-Custom `\maketitle` formatting, with title + author (and smaller spacing than standard `\maketitle`).  
-Takes an optional parameter `noFirstPage` if `\thispagestyle` should not be changed.  
-Style modifications for `\section`, `\subsection` and `\subsubsection`.
-
-### [`barnstedt_report.cls`](./barnstedt_report.cls)
-
-Custom documentclass styling, with a top bar (with the values of `\title` and `\author`), page numbers, and other formatting.  
-Options:
- - `line`: disable / enable top line
- - `hl=value`: override header value (left) with something else
- - `hr=value`: override header value (right) with something else
- - ... +all options from documentclass `article`, e.g. `12pt`  
-
-Example usage:
-```latex
-\documentclass[12pt, line, hl={{left title}}, hr=righttitle]{barnstedt_report}
-```
+> `barnstedt_title.sty`
+> 
+> Custom `\maketitle` formatting, with title + author (and smaller spacing than standard `\maketitle`).  
+> Style modifications for `\section`, `\subsection` and `\subsubsection`.
+> Options:
+> - `noFirstPage`: don't change `\thispagestyle` to `plain`, will affect header placement (`fancyhdr`)
+> - `noColor`: don't change header colors to blue
+> - `wholePage`: use the whole page for the title
