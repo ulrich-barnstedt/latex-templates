@@ -1,0 +1,18 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{barnstedt_imgconf}
+
+\RequirePackage{graphicx}
+\RequirePackage{kvoptions}
+\SetupKeyvalOptions{
+    family=bimgconf,
+    prefix=bimgconf@,
+}
+\DeclareBoolOption{noItalic}
+\ProcessKeyvalOptions*
+
+\graphicspath{{./images/}}
+\ifbimgconf@noItalic\else
+    \RequirePackage[format=plain,
+        labelfont=it,
+        textfont=it]{caption}
+\fi

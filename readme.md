@@ -14,6 +14,12 @@ Supports a `[monospace]` option to turn all text monospaced:
 \usepackage[monospace]{barnstedt_font}
 ```
 
+### [`barnstedt_imgconf.sty`](./barnstedt_imgconf.sty)
+
+Image loading and label configuration.  
+Sets the default directory for images to `./images`, and takes an optional parameter `noItalic` if captions should 
+not be turned into italic text.
+
 ### [`barnstedt_nodate.sty`](./barnstedt_nodate.sty)
 
 Removes date from `\maketitle` and other areas.
@@ -21,6 +27,7 @@ Removes date from `\maketitle` and other areas.
 ### [`barnstedt_title.sty`](./barnstedt_title.sty)
 
 Custom `\maketitle` formatting, with title + author (and smaller spacing than standard `\maketitle`).  
+Takes an optional parameter `noFirstPage` if `\thispagestyle` should not be changed.  
 Style modifications for `\section`, `\subsection` and `\subsubsection`.
 
 ### [`barnstedt_report.cls`](./barnstedt_report.cls)
