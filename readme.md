@@ -5,7 +5,7 @@ Naming schema: `barnstedt_<module-name>.<sty|cls>`
 
 ## Document classes
 
-> _`barnstedt_report.cls`_  
+> `barnstedt_report.cls`
 > 
 > Custom documentclass styling, with a top bar (with the values of `\title` and `\author`), page numbers, and other formatting.  
 > Options:
@@ -23,6 +23,7 @@ Naming schema: `barnstedt_<module-name>.<sty|cls>`
 > `barnstedt_font.sty`
 > 
 > Font configuration for `Roboto`/`Jetbrains Mono`.  
+> Also provides the `\mspc{text}` command for creating colored monospace text.  
 > Options:
 > - `monospace`: use monospace for all text
 
